@@ -5,23 +5,123 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catálogo Sanaré</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Overlay de login */
+    #loginScreen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #f6f7fb;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    #loginScreen input {
+      margin: 8px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 220px;
+    }
+    #loginScreen button {
+      padding: 10px 18px;
+      margin-top: 10px;
+      background: #7c3aed;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #error {
+      color: red;
+      margin-top: 10px;
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
-<!-- 🔒 Pantalla de login -->
-<div id="loginScreen" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#f6f7fb; display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:9999;">
+<!-- 🔒 Overlay de login -->
+<div id="loginScreen">
   <img src="SANAR神logo_trazo.png" alt="SANARÉ" style="max-width:180px; margin-bottom:20px;">
   <h2 style="font-family: Arial, sans-serif; color:#333;">Acceso restringido</h2>
-  <input type="text" id="username" placeholder="Usuario" style="margin:8px; padding:10px; border-radius:8px; border:1px solid #ccc;">
-  <input type="password" id="password" placeholder="Contraseña" style="margin:8px; padding:10px; border-radius:8px; border:1px solid #ccc;">
-  <button onclick="login()" style="padding:10px 18px; margin-top:10px; background:#7c3aed; color:#fff; border:none; border-radius:8px; cursor:pointer;">Entrar</button>
-  <p id="error" style="color:red; margin-top:10px; display:none;">Usuario o contraseña incorrectos</p>
+  <input type="text" id="username" placeholder="Usuario">
+  <input type="password" id="password" placeholder="Contraseña">
+  <button onclick="login()">Entrar</button>
+  <p id="error">Usuario o contraseña incorrectos</p>
 </div>
 
-<!-- 🔽 Aquí comienza tu catálogo (contenido original) -->
-<div id="catalogo">
-  <!-- todo el contenido de tu catálogo actual va aquí -->
+<style>
+  #loginScreen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #f6f7fb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  #loginScreen input {
+    margin: 8px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 220px;
+  }
+  #loginScreen button {
+    padding: 10px 18px;
+    margin-top: 10px;
+    background: #7c3aed;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  #error {
+    color: red;
+    margin-top: 10px;
+    display: none;
+  }
+</style>
+
+
+<!-- 🔒 Overlay de login -->
+<div id="loginScreen">
+  <img src="SANAR神logo_trazo.png" alt="SANARÉ" style="max-width:180px; margin-bottom:20px;">
+  <h2 style="font-family: Arial, sans-serif; color:#333;">Acceso restringido</h2>
+  <input type="text" id="username" placeholder="Usuario">
+  <input type="password" id="password" placeholder="Contraseña">
+  <button onclick="login()">Entrar</button>
+  <p id="error">Usuario o contraseña incorrectos</p>
 </div>
+
+<!-- 🔽 Aquí va tu catálogo -->
+<div id="catalogo">
+  <!-- Contenido original del catálogo -->
+  <!-- ⚠️ Inserta aquí todo tu HTML actual del catálogo -->
+</div>
+
+<script>
+  function login() {
+    const user = document.getElementById('username').value;
+    const pass = document.getElementById('password').value;
+
+    // 🔑 Credenciales genéricas
+    const validUser = "sanare";
+    const validPass = "12345";
+
+    if (user === validUser && pass === validPass) {
+      document.getElementById('loginScreen').style.display = 'none';
+    } else {
+      document.getElementById('error').style.display = 'block';
+    }
+  }
+</script>
+
 
 <script>
   function login() {
