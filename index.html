@@ -17318,5 +17318,19 @@
   });
 </script>
 
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("img").forEach(img => {
+    if (img.src.endsWith(".png")) {
+      img.src = img.src.replace(".png", ".jpg");
+    }
+    img.onerror = () => {
+      img.src = "./placeholder.png";
+    };
+  });
+});
+</script>
+
 </body>
 </html>
