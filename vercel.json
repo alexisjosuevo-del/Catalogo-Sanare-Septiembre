@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "src": "/.*",
+      "dest": "/index.html",
+      "methods": ["GET"],
+      "headers": {
+        "WWW-Authenticate": "Basic realm=\"Secure Area\""
+      }
+    }
+  ]
+}
